@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Produk | KAL-TIP</title>
+    <link rel="stylesheet" href="dashboard2.css">
+</head>
+<body>
+
+<header class="dashboard-header">
+    <h1>Daftar Produk KAL-TIP</h1>
+    <a href="../index.html" class="back-btn">← Kembali</a>
+</header>
+
+<!-- FILTER KATEGORI -->
+<div class="filter-box">
+    <button class="filter-btn active" data-filter="all">Populer</button>
+    <button class="filter-btn" data-filter="figure">Figure</button>
+    <button class="filter-btn" data-filter="tshirt">T-Shirt</button>
+    <button class="filter-btn" data-filter="giftset">Gift Set</button>
+</div>
+
+<section class="product-list">
+
+    <!-- ================== PRODUK POPULER (selalu tampil di SEMUA) ================== -->
+    <div class="product-card popular" data-category="figure"
+    onclick="openModal(
+        'Zoro Figure',
+        'Figur original Jepang, detail tinggi 18cm.',
+        '../assets/img/ZOROFIGURE.jpg',
+        '1350000'
+    )">
+   <img src="../assets/img/ZOROFIGURE.jpg">
+   <h3>Zoro Figure</h3>
+   <p>Figur premium Jepang</p>
+   <span class="price">Rp 1.350.000</span>
+   </div>
+
+
+   <div class="product-card popular" data-category="tshirt"
+   onclick="openModal(
+       'T-Shirt OnePiece Uniqlo',
+       'Kaos Uniqlo One Piece Original Jepang. Bahan tebal & adem.',
+       '../assets/img/KaosTshirt.jpg',
+       '199000'
+   )">
+  <img src="../assets/img/KaosTshirt.jpg">
+  <h3>T-Shirt OnePiece</h3>
+  <p>Kaos Jepang original</p>
+  <span class="price">Rp 199.000</span>
+  </div>
+
+
+   <div class="product-card popular" data-category="giftset"
+     onclick="openModal(
+         'Gift Set Nailong',
+         'Giftset berisi figure mini + gantungan + kartu koleksi.',
+         '../assets/img/nailong.jpeg',
+         '150000'
+     )">
+    <img src="../assets/img/nailong.jpeg">
+    <h3>Gift Set Nailong</h3>
+    <p>Original Japan</p>
+    <span class="price">Rp 150.000</span>
+   </div>
+
+
+    <!-- ================== PRODUK FIGURE TAMBAHAN ================== -->
+    <div class="product-card extra" data-category="figure"
+     onclick="openModal(
+         'Luffy Gear 5',
+         'Figur kualitas tinggi Gear 5 versi terbaru. Tinggi 22cm.',
+         '../assets/img/LuffyActionFIGURE.jpg',
+         '1400000'
+     )">
+    <img src="../assets/img/LuffyActionFIGURE.jpg">
+    <h3>Luffy Gear 5</h3>
+    <p>Figur premium Jepang</p>
+    <span class="price">Rp 1.400.000</span>
+    </div>
+
+
+    <div class="product-card extra" data-category="figure"
+     onclick="openModal(
+         'Sanji Ifrit Jambe',
+         'Sanji versi Ifrit Jambe limited edition. Tinggi 19cm.',
+         '../assets/img/SanjiFigure.jpg',
+         '1380000'
+     )">
+    <img src="../assets/img/SanjiFigure.jpg">
+    <h3>Sanji Ifrit Jambe</h3>
+    <p>Figur limited Japan</p>
+    <span class="price">Rp 1.380.000</span>
+   </div>
+
+
+    <!-- ================== PRODUK T-SHIRT TAMBAHAN ================== -->
+    <div class="product-card extra" data-category="tshirt"
+    onclick="openModal(
+        'Gojo T-Shirt',
+        'Kaos anime desainer Gojo Satoru Original Jepang.',
+        '../assets/img/gojosatorou.jpg',
+        '180000'
+    )">
+   <img src="../assets/img/gojosatorou.jpg">
+   <h3>Gojo T-Shirt</h3>
+   <p>Streetwear Jepang</p>
+   <span class="price">Rp 180.000</span>
+  </div>
+
+  <div class="product-card extra" data-category="tshirt"
+  onclick="openModal(
+      'Kimetsu no yaiba T-Shirt',
+      'Kaos anime Original Jepang.',
+      '../assets/img/Kimetsu.jpg',
+      '200000'
+   )">
+  <img src="../assets/img/Kimetsu.jpeg">
+  <h3>Kimestsu T-Shirt</h3>
+  <p>Streetwear Jepang</p>
+  <span class="price">Rp 200.000</span>
+  </div>
+  
+    <!-- ================== PRODUK GIFT SET TAMBAHAN ================== -->
+    <div class="product-card extra" data-category="giftset"
+    onclick="openModal(
+        'Mini Katana Set',
+        'Mini Katana 3-in-1 original Jepang. Cocok untuk kado.',
+        '../assets/img/minikata.jpg',
+        '250000'
+    )">
+   <img src="../assets/img/minikata.jpg">
+   <h3>Mini Katana Set</h3>
+   <p>Giftset Jepang</p>
+   <span class="price">Rp 250.000</span>
+   </div>
+
+
+</section>
+
+<!-- ===================== MODAL POPUP ===================== -->
+<div id="productModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">×</span>
+
+        <img id="modalImg" src="" alt="Produk">
+        <h2 id="modalTitle"></h2>
+        <p id="modalDesc"></p>
+
+        <h3 id="modalPrice" class="modal-price"></h3>
+
+        <button class="modal-btn" id="waButton">Pesan via WhatsApp</button>
+    </div>
+</div>
+
+
+<script src="dashboard3.js"></script>
+
+</body>
+</html>

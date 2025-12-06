@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAL-TIP Jastip Jepang</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ==================== LOGIN MODAL ==================== -->
+<div id="loginModal" class="login-modal">
+    <div class="login-box">
+        <span class="close-login" onclick="closeLogin()">×</span>
+        <h2>Sign In</h2>
+
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit" class="login-btn">Masuk</button>
+        </form>
+    </div>
+</div>
+
+<!-- ==================== REGISTER MODAL ==================== -->
+<div id="registerPopup" class="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closeRegister()">×</span>
+
+        <h2>Register Akun</h2>
+        <input type="text" id="regNama" placeholder="Nama lengkap">
+        <input type="email" id="regEmail" placeholder="Email">
+        <input type="password" id="regPass" placeholder="Password">
+        <button onclick="registerSubmit()">Daftar Sekarang</button>
+    </div>
+</div>
+
+<!-- ==================== HEADER ==================== -->
+<header class="main-header">
+    <div class="header-left">
+        <h1>KAL-TIP</h1>
+    </div>
+
+    <div class="header-right" id="headerRight">
+        <a href="#" class="signin-btn" onclick="openLogin()">Sign In</a>
+        <a href="#" class="register-btn" onclick="openRegister()">Register</a>
+    </div>
+</header>
+
+<!-- ==================== NAV ==================== -->
+<nav>
+    <a href="#home">Beranda</a>
+    <a href="#" id="btnProduk">Daftar Produk</a>
+    <a href="#pesan" onclick="showForm()">Form Pemesanan</a>
+    <a href="#kontak">Kontak</a>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero" id="home">
+    <div class="hero-text">
+        <h1>Jasa Titip Termurah & Terpercaya</h1>
+        <p>Dapatkan barang seperti Action Figure, T-shirt, dan Giftset langsung dari Jepang.</p>
+        <a href="#pesan" onclick="showForm()">Titip Sekarang</a>
+    </div>
+</section>
+
+<!-- ==================== PRODUK POPULER ==================== -->
+<section id="produk">
+    <h2>Kategori Populer</h2>
+
+    <div class="produk-container">
+        <article class="produk">
+            <img src="assets/img/SanjiFigure.jpg" alt="Sanji Figure">
+            <h3>SANJI FIGURE</h3>
+            <p>Koleksi original langsung dari Jepang!</p>
+        </article>
+
+        <article class="produk">
+            <img src="assets/img/LuffyActionFIGURE.jpg" alt="Luffy Figure">
+            <h3>LUFFY FIGURE</h3>
+            <p>Khas Jepang yang stylish.</p>
+        </article>
+
+        <article class="produk">
+            <img src="assets/img/ZOROFIGURE.jpg" alt="Zoro Figure">
+            <h3>ZORO FIGURE</h3>
+            <p>Figur original dari Jepang, kualitas terbaik!</p>
+        </article>
+    </div>
+</section>
+
+<!-- ==================== FORM PEMESANAN ==================== -->
+<section id="pesan">
+    <div class="form-box">
+        <button class="close-form" onclick="closeForm()">×</button>
+
+        <h2>Form Pemesanan</h2>
+
+        <form id="formPesanan">
+            <input type="text" id="nama" placeholder="Nama Lengkap">
+            <input type="text" id="barang" placeholder="Barang yang Dititip">
+            <textarea id="alamat" placeholder="Alamat Lengkap"></textarea>
+
+            <!-- tombol WA (bukan submit normal) -->
+            <button type="button" onclick="kirimPesananWA()">Kirim Pesanan via WhatsApp</button>
+        </form>
+
+    </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer id="kontak" class="footer-neon">
+    <div class="footer-content">
+        <h3>KAL-TIP Jastip Jepang</h3>
+        <p>📞 WA: <b>0896-3585-4359</b></p>
+        <p>📧 Email: <b>haikalfaqih78@gmail.com</b></p>
+        <p>📸 Instagram: <b>@kal_tip</b></p>
+    </div>
+
+    <p class="footer-copy">&copy; 2025 KALTIP. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

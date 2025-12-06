@@ -1,0 +1,758 @@
+/* ===== GLOBAL ===== */
+body {
+    font-family:'Noto Sans JP', sans-serif;
+    margin: 0;
+    color: #fff;
+
+    background: linear-gradient(180deg, #2c0000 0%, #4b0000 50%, #1a0000 100%);
+}
+
+/* Default: hanya tampilkan produk populer */
+.product-card {
+    display: none;
+}
+
+.product-card.popular {
+    display: block;
+}
+.hero {
+    background-image: url("assets/img/BEBEK2.jpg"); /* gambar jepang kamu */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    padding: 140px 20px;
+    text-align: center;
+    position: relative;
+}
+
+/* Tambahkan sedikit overlay biar teks tetap jelas */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.45);  /* efek gelap */
+    backdrop-filter: blur(1px);    /* efek aesthetic */
+    z-index: 0;
+}
+
+.hero * {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ===== HEADER (NAVBAR ATAS) ===== */
+header {
+    background-color: #222; /* warna hitam elegan */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
+/* Logo / Judul */
+header h1 {
+    margin: 0;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+}
+
+/* Tombol Sign In */
+header .signin-btn {
+    color: white;
+    text-decoration: none;
+    padding: 8px 18px;
+    border: 1px solid white;
+    border-radius: 18px;
+    transition: 0.3s;
+}
+
+header .signin-btn {
+    animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 4px rgba(255,0,0,0.4); }
+    50% { box-shadow: 0 0 18px rgba(255,30,30,0.85); }
+    100% { box-shadow: 0 0 4px rgba(255,0,0,0.4); }
+}
+
+
+/* ===== NAVBAR ANIME STYLE ===== */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #222;
+    padding: 10px 0;
+    gap: 25px;
+    animation: fadeInNav 0.8s ease-in-out;
+}
+
+/* fade-in */
+@keyframes fadeInNav {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* LINK */
+nav a {
+    position: relative;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    overflow: hidden;
+    transition: color 0.3s;
+}
+
+/* RETSAKED ANIME SLASH */
+nav a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 120%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent 0%,
+        #ff5e5e 30%,
+        #ffd2d2 60%,
+        transparent 100%
+    );
+    transform: skewX(-25deg);
+    transition: 0.4s;
+}
+
+nav a:hover::before {
+    left: 100%;
+}
+
+/* Neon glow text */
+nav a:hover {
+    color: #ff4a4a;
+    text-shadow: 0 0 8px #ff4a4a, 0 0 15px #ff4a4a;
+}
+
+/* Underline anime flash */
+nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    width: 0%;
+    height: 3px;
+    background: #e9be30ee;
+    transition: 0.3s;
+    box-shadow: 0 0 10px #e9be30ee;
+}
+
+nav a:hover::after {
+    width: 70%;
+    left: 15%;
+}
+
+/* ============================
+      DEMON SLAYER HERO
+============================ */
+.hero {
+    background-image: url("assets/img/ShinmonBenimaru.jpeg"); 
+    background-size: cover;
+    background-position: center;
+    padding: 140px 20px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* ============================
+      FIRE OVERLAY (MERAH)
+============================ */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgb(0 0 0 / 60%);
+    z-index: 0;
+}
+
+/* ============================
+      PARTICLE API MERAH
+============================ */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("assets/img/test.jpeg");
+    opacity: 0.35;
+    mix-blend-mode: screen;
+    z-index: 0;
+}
+
+/* ============================
+      TEXT ANIME ENTRANCE
+============================ */
+.hero-text {
+    position: relative;
+    z-index: 1;
+    color: white;
+    animation: tanjiroEntrance 1.2s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes tanjiroEntrance {
+    0% {
+        transform: translateY(40px) scale(0.9);
+        filter: brightness(0.6);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        filter: brightness(1);
+        opacity: 1;
+    }
+}
+.register-btn {
+    margin-left: 10px;
+    padding: 8px 16px;
+    background: #ff0044;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.3s;
+    box-shadow: 0 0 10px #ff0044;
+}
+
+.register-btn:hover {
+    background: white;
+    color: black;
+    box-shadow: 0 0 15px #ff3366;
+}
+
+/* ============================
+      JUDUL FIRE GLOW
+============================ */
+.hero-text h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    text-shadow:
+        0 0 10px #ff6b3b,
+        0 0 25px #ff3000,
+        0 0 55px #ff1500,
+        0 0 80px #ff5e00;
+    animation: rengokuGlow 2s infinite alternate ease-in-out;
+}
+
+@keyframes rengokuGlow {
+    from {
+        text-shadow:
+            0 0 10px #ff3d00,
+            0 0 25px #ff1500,
+            0 0 50px #ff3000;
+    }
+    to {
+        text-shadow:
+            0 0 15px #ff944d,
+            0 0 40px #ff6b3b,
+            0 0 80px #ff5431;
+    }
+}
+/* Smooth GPU acceleration */
+.product-card {
+    will-change: transform, opacity;
+}
+
+/* Hindari animasi berat saat pertama load */
+.product-list {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ============================
+      DESKRIPSI
+============================ */
+.hero-text p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+/* ============================
+      BUTTON: FIRE SLASH
+============================ */
+.hero-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 40px;
+    background: linear-gradient(90deg, #ff1a00, #ff5c2c);
+    border-radius: 35px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 0 18px #ff2d00;
+    transition: 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover glow besar */
+.hero-btn:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 25px #ff3b00, 0 0 50px #ff1500;
+}
+
+/* SLASH API TANJIRO */
+.hero-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -130%;
+    width: 130%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        rgba(255,200,150,0) 0%,
+        rgba(255,210,150,0.9) 50%,
+        rgba(255,100,0,0) 100%
+    );
+    transform: skewX(-25deg);
+    transition: 0.45s ease;
+}
+
+.hero-btn:hover::after {
+    left: 130%;
+}
+
+/* ===== SECTION ===== */
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+/* ====================== REGISTER POPUP ======================= */
+
+.popup {
+    display: none;                 /* sembunyikan dulu */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.75);  /* overlay gelap */
+    backdrop-filter: blur(3px);    /* efek blur */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.popup-content {
+    background: #1a1a1a;
+    padding: 25px;
+    width: 380px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #ff0044;
+    animation: fadeIn 0.3s ease;
+}
+
+.popup-content h2 {
+    margin-bottom: 15px;
+    color: #ff0044;
+}
+
+.popup-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+.popup-content button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: #ff0044;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 0 15px #ff0044;
+}
+
+.popup-content button:hover {
+    background: #ff1e5a;
+}
+
+.popup .close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #ff0044;
+}
+
+/* ANIMASI */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+/* ===== PRODUK CARD ===== */
+.produk-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.produk {
+    background-color:rgba(120, 0, 0, 0.85);
+    width: 220px;
+    border-radius: 14px;
+    padding: 15px;
+    border: 1px solid rgba(255, 0, 0, 0.35);
+    box-shadow: 0 0 12px rgba(255, 0, 0, 0.18);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.produk:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 22px rgba(255, 50, 50, 0.45), 
+                0 4px 20px rgba(120, 0, 0, 0.6);
+}
+.produk {
+    backdrop-filter: blur(3px);
+}
+
+.produk img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* ===== FORM PEMESANAN ===== */
+form {
+    max-width: 450px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background: #fff;
+    transition: border 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: #e40303;
+    outline: none;
+}
+
+/* ===== BUTTON ===== */
+button {
+    background: #e40303;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+.form-section {
+    padding: 60px 20px;
+    text-align: center;
+    background: #111;
+    color: white;
+}
+
+.order-form {
+    max-width: 450px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.order-form input,
+.order-form textarea {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #222;
+    color: white;
+}
+
+.order-form textarea {
+    height: 120px;
+    resize: none;
+}
+
+.form-btn {
+    padding: 14px;
+    background: #ff003c;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.form-btn:hover {
+    background: #ff4a4a;
+    box-shadow: 0 0 10px #ff2020;
+}
+#pesan {
+    display: none; /* awalnya disembunyikan */
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+#pesan.show {
+    display: block;
+    opacity: 1; /* efek fade in */
+}
+.form-box {
+    position: relative;
+    background: #1a1a1a;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(255, 0, 70, 0.4);
+    max-width: 420px;
+    margin: auto;
+}
+.footer-neon {
+    background: #0d0d0d;
+    padding: 35px 20px;
+    text-align: center;
+    margin-top: 50px;
+    box-shadow: 0 0 20px rgba(255, 0, 70, 0.3);
+    border-top: 2px solid #ff0047;
+}
+
+.footer-content h3 {
+    color: #ff2a5a;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-shadow: 0 0 8px #ff0047;
+}
+
+.footer-neon p {
+    margin: 5px 0;
+    color: #e6e6e6;
+    font-size: 0.95rem;
+}
+
+.footer-copy {
+    margin-top: 12px;
+    font-size: 0.85rem;
+    color: #999;
+}
+
+.close-form {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: #ff0047;
+    color: white;
+    border: none;
+    font-size: 20px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 8px #ff0047;
+    transition: 0.2s;
+}
+
+.close-form:hover {
+    background: #ff306b;
+    box-shadow: 0 0 12px #ff2a5a;
+}
+/* ===== SIGN IN MODAL ===== */
+.login-modal {
+    display: none; /* default hidden */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.login-box {
+    background: #1a1a1a;
+    width: 320px;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 18px #ff003c;
+    animation: popIn 0.3s ease;
+}
+
+@keyframes popIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close-login {
+    float: right;
+    font-size: 22px;
+    cursor: pointer;
+    color: #ff4b4b;
+}
+
+.login-box h2 {
+    color: #ff2a5a;
+    margin-bottom: 15px;
+}
+
+.login-box input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: none;
+    background: #2b2b2b;
+    color: white;
+    outline: none;
+}
+
+.login-btn {
+    margin-top: 10px;
+    width: 95%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #ff003c;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 0 10px #ff003c;
+    transition: 0.2s;
+}
+
+.login-btn:hover {
+    background: #ff5050;
+    box-shadow: 0 0 14px #ff5050;
+}
+/* REGISTER POPUP */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.7);
+    z-index: 9999;
+}
+
+.popup-content {
+    background: white;
+    padding: 25px;
+    width: 350px;
+    border-radius: 10px;
+    position: relative;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Tombol close (X) */
+.popup-content .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+    transition: 0.2s;
+}
+
+.popup-content .close:hover {
+    color: red;
+}
+
+/* Input form */
+.popup-content input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+}
+
+/* Tombol Register */
+.popup-content button {
+    width: 100%;
+    padding: 12px;
+    background: #ff0055;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.popup-content button:hover {
+    background: #d70045;
+}
+
+/* Animasi */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+.user-tag {
+    margin-right: 12px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.logout-btn {
+    color: #ff3b3b;
+    font-weight: 600;
+    text-decoration: none;
+}
+.logout-btn:hover {
+    color: #ff7777;
+}
+
+button:hover {
+    background: #000000;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
